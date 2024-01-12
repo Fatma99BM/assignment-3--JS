@@ -1,0 +1,83 @@
+ul{
+    list-style: none;
+}
+body{
+    background-color: bisque;
+}
+.maintitle{
+    font-family:"Pacifico", cursive;
+    font-size: 3.125rem;
+    position: relative;
+}
+.maintitle::before{
+    content: "";
+    position: absolute;
+    width: 270px;
+    height: 15px;
+    bottom: 0px;
+    left: 510px;
+    background-image: linear-gradient(to right, #54de7d, #dfd348);
+    z-index: -1;
+    
+}
+.maintitle:hover ::before{
+    height: 30px;
+}
+.bookmark-body{
+    border-width: 2px 0px ;
+    border-style: dotted;
+}
+.secondTitle{
+    font-family: "Righteous", cursive;
+    font-size: 1.5625rem;
+    background-image: linear-gradient(to left, #3ca55c, #b5ac49);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.submit-btn{
+    background-color: #b5ac49;
+    color: aliceblue;
+}
+.box{
+    background-color: rgba(0, 0, 0, 0.467);
+}
+#errorMassage{
+    position: absolute;
+    top: 200px;
+    left: 500px;
+    width: 31.25rem;
+}
+
+.potins span{
+    width: 1.4rem;
+    height: 1.4rem;
+}
+.potins .p1{
+    background-color: tomato;
+}
+.potins .p2{
+    background-color: rgb(237, 237, 41);
+}
+.potins .p3{
+    background-color: rgb(28, 237, 28);
+}
+#errorMassage p{
+    font-size: 1.3125rem;
+    font-family: "Bree Serif", serif;
+}
+#errorMassage li{
+    font-size: 1.125rem;
+    font-family: 'Kaushan Script', cursive;
+font-family: 'Righteous', sans-serif;
+font-family: 'Shadows Into Light', cursive;
+font-family: 'Tilt Neon', sans-serif;
+font-weight: 400;
+}
+#errorMassage li i{
+    color: red;
+}
+
+input{
+    /* box-shadow: none !important; */
+    box-shadow: #dfd348 !important;
+}

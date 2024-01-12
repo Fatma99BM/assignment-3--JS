@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark</title>
+    <link rel="stylesheet" href="CSS/all.min.css">
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Inter:wght@400;800&family=Lato:wght@300&family=Lilita+One&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=PT+Sans&family=Pacifico&family=Playfair+Display&family=Playpen+Sans:wght@100;300&family=Quicksand:wght@300&family=Raleway:wght@200&family=Roboto+Condensed:wght@200&family=Roboto:wght@100&family=Rubik+Doodle+Shadow&family=Shadows+Into+Light&family=Tilt+Neon&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Inter:wght@400;800&family=Lato:wght@300&family=Lilita+One&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=PT+Sans&family=Playfair+Display&family=Playpen+Sans:wght@100;300&family=Quicksand:wght@300&family=Raleway:wght@200&family=Righteous&family=Roboto+Condensed:wght@200&family=Roboto:wght@100&family=Rubik+Doodle+Shadow&family=Shadows+Into+Light&family=Tilt+Neon&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bree+Serif&family=Inter:wght@400;800&family=Lato:wght@300&family=Lilita+One&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=PT+Sans&family=Playfair+Display&family=Playpen+Sans:wght@100;300&family=Quicksand:wght@300&family=Raleway:wght@200&family=Righteous&family=Roboto+Condensed:wght@200&family=Roboto:wght@100&family=Rubik+Doodle+Shadow&family=Shadows+Into+Light&family=Tilt+Neon&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption&family=Righteous&family=Shadows+Into+Light&family=Tilt+Neon&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Righteous&family=Shadows+Into+Light&family=Tilt+Neon&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="maintitle text-center pt-5 mb-5">Bookmarker</h1>
+        <div class="bookmark-body w-100 d-flex flex-column justify-content-center align-items-center p-3">
+            <h2 class="secondTitle"><i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i class="fa-solid fa-bookmark"></i></h2>
+            <div class="w-100">
+                <label class="pb-2 fw-bold" for="bookmarkNameInput"><i class="fa-solid fa-book-bookmark pe-2"></i> Site Name</label>
+                <input type="text" id="bookmarkNameInput" placeholder="Bookmark Name" class="form-control" oninput="validationName()">
+            </div>
+            <div class="w-100">
+                <label class="pb-2 fw-bold" for="bookmarkUrlInput"><i class="fa-solid fa-link pe-2"></i> Site URL </label>
+                <input type="text" id="bookmarkUrlInput" placeholder="Website URL" class="form-control" oninput="validationUrl()">
+            </div>
+            <button class="btn btn-dark px-5 mt-3" id="submitBtn" onclick="addBookmark()">Submit</button>
+        </div>
+        <div>
+            <table class="table mt-3 text-center">
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Website Name</th>
+                        <th>Visit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody" class="text-center">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="boxMassage" class="box position-absolute w-100 h-100 top-0 start-0 d-flex justify-content-center align-items-center d-none">
+        <div id="errorMassage" class="d-flex justify-content-center align-items-center">
+            <div class="p-4 shadow-lg bg-white rounded-2">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="potins d-flex justify-content-between w-25 px-2 mt-3 ">
+                        <span class="p1 rounded-circle"></span>
+                        <span class="p2 rounded-circle"></span>
+                        <span class="p3 rounded-circle"></span>
+                    </div>
+                    <button id="closeBtn" onclick="closeMassage()" class="btn border-0"><i class="fa-solid fa-xmark close fs-3"></i></button>
+                </div>
+                <p class="mt-4">Site Name or Url is not valid, Please follow the rules below :</p>
+                <ul class="ps-0">
+                    <li><i class="fa-regular fa-circle-right p-2"></i> Site name must contain at least 3 characters</li>
+                    <li><i class="fa-regular fa-circle-right p-2"></i> Site URL must be a valid one</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
